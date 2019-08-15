@@ -2,14 +2,14 @@ apply plugin: 'com.android.application'
 apply plugin: 'realm-android'
 
 android {
-    compileSdkVersion 27
+    compileSdkVersion 28
     defaultConfig {
-        applicationId "com.zhiyong.mynotes"
+        applicationId "com.zhiyong.easy_note_simple"
         minSdkVersion 21
-        targetSdkVersion 27
+        targetSdkVersion 28
         versionCode 1
         versionName "1.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
         release {
@@ -24,16 +24,16 @@ android {
 }
 
 dependencies {
-    implementation 'com.android.support:multidex:1.0.3'
+    implementation 'androidx.multidex:multidex:2.0.0'
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation "com.android.support:appcompat-v7:${supportLibrariesVersion}"
-    implementation "com.android.support:design:${supportLibrariesVersion}"
-    implementation "com.android.support:support-v4:${supportLibrariesVersion}"
-    implementation "com.android.support:support-v13:${supportLibrariesVersion}"
-    implementation "com.android.support.constraint:constraint-layout:$constraintLayoutVer"
+    implementation 'androidx.appcompat:appcompat:1.0.0'
+    implementation 'com.google.android.material:material:1.0.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.legacy:legacy-support-v13:1.0.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
     testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.2'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    androidTestImplementation 'androidx.test:runner:1.1.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0'
     implementation "com.google.dagger:dagger:${dagger2Version}"
     annotationProcessor "com.google.dagger:dagger-compiler:${dagger2Version}"
     implementation "com.squareup.retrofit2:retrofit:${retrofit2Version}"
@@ -44,4 +44,7 @@ dependencies {
     implementation "com.jakewharton.timber:timber:$timberVersion"
     implementation "com.blankj:utilcode:$utilcodeVer"
     implementation "com.afollestad.material-dialogs:core:${materialDialogVersion}"
+
+    implementation 'com.google.firebase:firebase-core:17.0.0'
 }
+apply plugin: 'com.google.gms.google-services'
